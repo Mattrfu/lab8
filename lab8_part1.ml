@@ -366,3 +366,10 @@ module MakeBestInterval (Endpoint : ORDERED_TYPE)
          create low high
   end
 ;;
+
+module IntBestInterval =
+  MakeBestInterval
+    (struct 
+      type t = int 
+      let compare = Stdlib.compare
+    end) ;;
